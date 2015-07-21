@@ -1,6 +1,4 @@
 <?php
-include_once('../qm-oauth.php');
-
 class PluginTest extends WP_UnitTestCase {
     private $plugin; 
     function setUp() {
