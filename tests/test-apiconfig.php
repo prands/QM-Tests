@@ -1,6 +1,4 @@
 <?php
-require_once('../login-quantimodo.php');
-
 class ApiconfigTest extends WP_UnitTestCase {
      
 	 public function testConfig() {
