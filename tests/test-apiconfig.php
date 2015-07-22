@@ -13,7 +13,7 @@ class ApiconfigTest extends WP_UnitTestCase {
 		//echo $this->testGetOauthCode($this);  die;
     }
 	
-	function testGetOauthCode($qmoa) {	
+	function testGetOauthCode() {	
 		//$_SESSION['WPOA']['STATE'] = $params['state'];
 		
 		$url = "https://staging.quantimo.do:443/api/oauth2/authorize?" . http_build_query($this->clientConfig);
