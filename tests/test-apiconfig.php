@@ -24,7 +24,7 @@ class ApiconfigTest extends WP_UnitTestCase {
 			curl_setopt($curl, CURLOPT_URL, $url);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($curl, CURLOPT_POST, 1);
-			curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
+			curl_setopt($curl, CURLOPT_POSTFIELDS, $this->clientConfig);
 			// PROVIDER NORMALIZATION: PayPal requires Accept and Accept-Language headers, Reddit requires sending a User-Agent header
 			// PROVIDER NORMALIZATION: PayPal/Reddit requires sending the client id/secret via http basic authentication
 			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, (get_option('qmoa_http_util_verify_ssl') == 1 ? 1 : 0));
