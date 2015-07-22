@@ -32,7 +32,9 @@ class ApiconfigTest extends WP_UnitTestCase {
 			$result = curl_exec($curl);
 			
 	// parse the result:
-	$result_obj = json_decode($result, true); // PROVIDER SPECIFIC: QuantiModo encodes the access token result as json by default		
-	$access_token = $result_obj['access_token']; // PROVIDER SPECIFIC: this is how QuantiModo returns the access token KEEP THIS PROTECTED!			
+	$result_obj = json_decode($result, true); // PROVIDER SPECIFIC: QuantiModo encodes the access token result as json by default	
+	echo '<pre>'; print_r($result_obj); die;
+	
+	//$access_token = $result_obj['access_token']; // PROVIDER SPECIFIC: this is how QuantiModo returns the access token KEEP THIS PROTECTED!			
     }	
 }
