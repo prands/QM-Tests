@@ -8,7 +8,7 @@ class ApiconfigTest extends WP_UnitTestCase {
 		'grant_type' => 'authorization_code',
 		'client_id' => getenv('CLIENT_ID'),
 		'client_secret' => getenv('CLIENT_SECRET'),
-		'code' => $_GET['code'],
+		'code' => uniqid('', true),
 		'redirect_uri' => "http://quantimodo.projectstatus.in/",
 	);
            
