@@ -3,21 +3,23 @@ class ApiconfigTest extends WP_UnitTestCase {
      private $clientConfig;
 	 public function setUp()
 		{
-        $this->clientConfig = array(
-                'client_id' => getenv('CLIENT_ID'),
-                'client_secret' => getenv('CLIENT_SECRET'),
-                'authorize_endpoint' => "https://staging.quantimo.do:443/api/oauth2/authorize?",
-                'token_endpoint' => 'https://staging.quantimo.do:443/api/oauth2/token?',
-            );
+       
+		$this->clientConfig = array(
+		'grant_type' => 'authorization_code',
+		'client_id' => getenv('CLIENT_ID'),
+		'client_secret' => getenv('CLIENT_SECRET'),
+		'code' => $_GET['code'],
+		'redirect_uri' => "http://quantimodo.projectstatus.in/",
+	);
            
     }
 	 
-	 public function testGetAccessToken()
+	public function testGetAccessToken()
     {
       
 	$url_params = http_build_query($this->clientConfig);
 
-			$url = URL_TOKEN . $url_params;
+			$url = "https://staging.quantimo.do:443/api/oauth2/token?" . $url_params;
 			$curl = curl_init();
 			curl_setopt($curl, CURLOPT_URL, $url);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
