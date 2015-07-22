@@ -2,19 +2,34 @@
 class ApiconfigTest extends WP_UnitTestCase {
      private $clientConfig;
 	 public function setUp()
-		{
-       
-		$this->clientConfig = array(
+		{       
+		/*$this->clientConfig = array(
 		'grant_type' => 'authorization_code',
 		'client_id' => getenv('CLIENT_ID'),
 		'client_secret' => getenv('CLIENT_SECRET'),
 		'code' => uniqid('', true),
 		'redirect_uri' => "http://quantimodo.projectstatus.in/",
-	);
-           
+	);*/
+		echo $this->testGetOauthCode($this);  die;
     }
-	 
-	public function testGetAccessToken()
+	
+	function testGetOauthCode($qmoa) {
+	$params = array(
+			'response_type' => 'code',
+			'client_id' => CLIENT_ID,
+			'scope' => "writemeasurements",
+			'state' => uniqid('', true),
+			'redirect_uri' => "http://quantimodo.projectstatus.in/",
+		);
+		//$_SESSION['WPOA']['STATE'] = $params['state'];
+		
+		$url = "https://staging.quantimo.do:443/api/oauth2/authorize?" . http_build_query($params);
+		
+		header("Location: $url");
+		exit;
+	}
+	
+	/*public function testGetAccessToken()
     {
       
 	$url_params = http_build_query($this->clientConfig);
@@ -36,5 +51,5 @@ class ApiconfigTest extends WP_UnitTestCase {
 	echo '<pre>'; print_r($result_obj); die;
 	
 	//$access_token = $result_obj['access_token']; // PROVIDER SPECIFIC: this is how QuantiModo returns the access token KEEP THIS PROTECTED!			
-    }	
+    }	*/
 }
