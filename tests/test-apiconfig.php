@@ -8,7 +8,7 @@ class ApiconfigTest extends WP_UnitTestCase {
 			'client_id' => getenv('CLIENT_ID'),
 			'scope' => "writemeasurements",
 			'state' => uniqid('', true),
-			'redirect_uri' => "http://quantimodo.projectstatus.in/",
+			'redirect_uri' => getenv('REDIRECT_URI'),
 		);
 		//echo $this->testGetOauthCode($this);  die;
     }
@@ -16,7 +16,7 @@ class ApiconfigTest extends WP_UnitTestCase {
 	function testGetOauthCode() {	
 		//$_SESSION['WPOA']['STATE'] = $params['state'];
 		
-		$url = "https://staging.quantimo.do:443/api/oauth2/authorize?" . http_build_query($this->clientConfig);
+		$url = "https://app.quantimo.do/api/oauth2/authorize?" . http_build_query($this->clientConfig);
 		
 		$curl = curl_init();
 			curl_setopt($curl, CURLOPT_URL, $url);
