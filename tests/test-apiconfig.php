@@ -16,7 +16,7 @@ class ApiconfigTest extends WP_UnitTestCase {
 	function testGetOauthCode($qmoa) {
 	$params = array(
 			'response_type' => 'code',
-			'client_id' => CLIENT_ID,
+			'client_id' => getenv('CLIENT_ID'),
 			'scope' => "writemeasurements",
 			'state' => uniqid('', true),
 			'redirect_uri' => "http://quantimodo.projectstatus.in/",
