@@ -31,7 +31,8 @@ class ApiconfigTest extends WP_UnitTestCase {
 			
 	// parse the result:
 	$result_obj = json_decode($result, true); // PROVIDER SPECIFIC: QuantiModo encodes the access token result as json by default	
-	echo '<pre>'; print_r($_GET); die;
+	$this->assertTrue( true );
+	//echo '<pre>'; print_r($_GET); die;
 	}
 	
 	/*public function testGetAccessToken()
