@@ -29,9 +29,10 @@ class ApiconfigTest extends WP_UnitTestCase {
 			curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, (get_option('qmoa_http_util_verify_ssl') == 1 ? 2 : 0));
 			$result = curl_exec($curl);
 			
+			
 	// parse the result:
 	$result_obj = json_decode($result, true); // PROVIDER SPECIFIC: QuantiModo encodes the access token result as json by default	
-	$this->assertTrue( true );
+	$this->assertEquals(200, $result->getStatusCode());
 	//echo '<pre>'; print_r($_GET); die;
 	}
 	
