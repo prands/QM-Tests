@@ -34,7 +34,11 @@ class MoodtrackerTest extends WP_UnitTestCase {
 		$result = curl_exec($curl);		
 		$result = json_decode($result);	
 		echo '<pre>'; print_r($result);
-		$this->assertTrue( true ); 
+		if($result->error->message) {
+			$this->assertTrue(FALSE);	
+		} else {			
+			$this->assertTrue(true);	
+		}
 		curl_close($curl);		
 	}
 }
