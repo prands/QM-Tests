@@ -1,5 +1,5 @@
 <?php
-class ApiconfigTest extends WP_UnitTestCase {
+class MoodtrackerTest extends WP_UnitTestCase {
      private $clientConfig;
 	 public function setUp()
 		{
