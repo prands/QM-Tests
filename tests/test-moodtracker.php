@@ -20,7 +20,7 @@ class MoodtrackerTest extends WP_UnitTestCase {
 	
 	public function testMoodTracker(){
 		
-		//$field_string = http_build_query($this->clientConfig);
+		$field_string = http_build_query($this->clientConfig);
 		$url = 'https://app.quantimo.do/api/measurements/v2';
 		$curl = curl_init();
 		$header = array();
@@ -30,7 +30,7 @@ class MoodtrackerTest extends WP_UnitTestCase {
 		curl_setopt($curl, CURLOPT_URL, $url);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_POST, true);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, $this->clientConfig);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $field_string);
 		$result = curl_exec($curl);
 		echo '<pre>'; print_r($result); die;
 		$result = json_decode($result);				
