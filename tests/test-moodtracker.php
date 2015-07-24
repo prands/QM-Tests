@@ -21,7 +21,7 @@ class MoodtrackerTest extends WP_UnitTestCase {
 	
 	public function testMoodTracker(){		
 		$field_string = http_build_query($this->clientConfig);
-		$url = 'https://app.quantimo.do/api/measurements/v2?'. $field_string;
+		$url = 'https://app.quantimo.do/api/measurements/v?'. $field_string;
 		$curl = curl_init();
 		$header = array();
 		$header[] = "Content-Type: application/json";
