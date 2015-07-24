@@ -31,7 +31,7 @@ class MoodtrackerTest extends WP_UnitTestCase {
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $field_string);
-		$result = curl_exec($curl);		
+		$result = curl_exec($curl);
 		$result = json_decode($result);	
 		echo '<pre>'; print_r($result);
 		if($result->error->message) {
