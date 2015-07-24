@@ -25,7 +25,7 @@ class MoodtrackerTest extends WP_UnitTestCase {
 		$curl = curl_init();
 		$header = array();
 		$header[] = "Content-Type: application/json";
-		$header[] = 'Authorization: Bearer'.getenv('ACCESS_TOKEN');		
+		$header[] = 'Authorization: Bearer'.getenv('ACCESS_TOKEN').'fghfg';		
 		curl_setopt($curl, CURLOPT_HTTPHEADER,$header);		
 		curl_setopt($curl, CURLOPT_URL, $url);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
