@@ -2,10 +2,7 @@
 class ApiconfigTest extends WP_UnitTestCase {
      private $clientConfig;
 	 public function setUp()
-		{
-		$this->setBrowser('firefox');
-		$this->setBrowserUrl('http://quantimodo.projectstatus.in');		
-		
+		{       
 		$this->clientConfig =  array(
 			'response_type' => 'code',
 			'client_id' => getenv('CLIENT_ID'),
@@ -15,11 +12,7 @@ class ApiconfigTest extends WP_UnitTestCase {
 		);
 		//echo $this->testGetOauthCode($this);  die;
     }
-	public function testTitle()
-	{
-		$this->url('wp-admin');
-		$this->assertContains('Log In', $this->title());
-	}
+	
 	function testGetOauthCode() {	
 		//$_SESSION['WPOA']['STATE'] = $params['state'];
 		
