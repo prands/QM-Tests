@@ -10,7 +10,7 @@ class WebTest extends PHPUnit_Extensions_Selenium2TestCase
     public function testTitle()
     {
         $this->url('http://quantimodo.projectstatus.in/');
-        $this->assertEquals('QuantiModo | Just another WordPress site', $this->title());
+        $this->assertEquals('QuantiModo | Just another WordasdPress sd', $this->title());
     }
 
 }
