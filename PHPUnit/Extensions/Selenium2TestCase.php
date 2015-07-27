@@ -503,8 +503,5 @@ abstract class PHPUnit_Extensions_Selenium2TestCase extends PHPUnit_Framework_Te
      * setUp method that is called after the session has been prepared.
      * It is possible to use session-specific commands like url() here.
      */
-    public function setUpPage()
-    {
-
-    }
+   
 }
