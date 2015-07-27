@@ -55,7 +55,7 @@ use PHPUnit_Extensions_Selenium2TestCase_Keys as Keys;
 class Extensions_Selenium2TestCaseTest extends Tests_Selenium2TestCase_BaseTestCase
 {
     public function testOpen()
-    {
+    { 
         $this->url('html/test_open.html');
         $this->assertStringEndsWith('html/test_open.html', $this->url());
     }
