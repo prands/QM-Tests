@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/../../PHPUnit/Extensions/Selenium2TestCase.php';
 class WebTest extends PHPUnit_Extensions_Selenium2TestCase
 {
 	die('HERE');
