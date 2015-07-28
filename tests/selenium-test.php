@@ -1,6 +1,7 @@
 <?php
 class WebTest extends PHPUnit_Extensions_Selenium2TestCase
 {
+	die('HERE');
     protected function setUp()
     {
         $this->setBrowser('firefox');
